@@ -25,14 +25,10 @@
       <version>1.0.13</version>
     </dependency>
     <dependency>
-      <groupId>br.com.threads</groupId>
-      <artifactId>threads</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.16.12</version>
     </dependency>
+
   </dependencies>
 </project>
