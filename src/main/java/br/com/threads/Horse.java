@@ -2,12 +2,13 @@ package br.com.threads;
 
     import java.util.Random;
     import java.util.Timer;
+    import java.util.concurrent.Callable;
     import java.util.concurrent.TimeUnit;
 
     import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class Horse implements Runnable {
+public class Horse implements Runnable, Callable {
 
   String nome;
 
@@ -41,4 +42,15 @@ public class Horse implements Runnable {
     return rand.nextInt((max - min) + 1) + min;
   }
 
+  public Object call() throws Exception {
+    log.info("Running Horse with call: " + getNome());
+    try {
+      TimeUnit.MILLISECONDS.sleep(randInt(1000, 5000));
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      log.error("Error is ", e);
+    }
+    log.info("Horse => " + getNome() + " === F I N I S H ===");
+    return getNome();
+  }
 }
